@@ -1,22 +1,19 @@
 
-objs = require("objs")
+local objs = require("objs")
+local teste
 
 function  love.load()
-    objs.createObj(67, 200, "cadeira")
-    objs.createObj(10, 200, "mesa")
-    objs.createObj(90, 200, "cadeira")
-    objs.createObj(130, 200, "mesa")
-    objs.createObj(180, 200, "cadeira")
-    objs.createObj(220, 200, "mesa")
+    objs.CreateObj(67, 200, "cadeira")
+    teste = objs.CreateObj(10, 200, "mesa")
+    objs.CreateObj(90, 200, "cadeira")
+    objs.CreateObj(130, 200, "mesa")
+    objs.CreateObj(180, 200, "cadeira")
+end
+
+function love.update(dt)
+    objs.ChangeObjectPos(teste, 100 * dt, 100 * dt)
 end
 
 function  love.draw()
     objs.draw()
-end
-
-function objs.create(...)
-    local objList = {...}
-    for i, obj in ipairs(objList) do
-         print("tag: " .. obj.id, "\n x: " ..obj.x, "\n y: " .. obj.y )
-    end
 end
