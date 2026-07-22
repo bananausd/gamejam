@@ -21,13 +21,13 @@ function player2.update(dt)
 end
 
 function movePlayer(dt, mvel)
-    keydown("left", function (dt)
+    keydown("left", function ()
         player.velx = player.velx - mvel * dt
 end, 
     function ()
         player.velx = 0
     end)
-     keydown("right", function (dt)
+     keydown("right", function ()
         player.velx = player.velx - mvel * dt
 end, 
     function ()
