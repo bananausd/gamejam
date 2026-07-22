@@ -5,7 +5,7 @@ gmvel = 2
 joystick = nil
 player = {
     indiv = {
-        y  = 30, x = 30, vely = 0, velx = 0,
+        y  = 30, x = 30, vely = 0, velx = 0, w = 40, h = 90,
         stats = {
             saude = 100,
             dmg = 10,
@@ -36,8 +36,8 @@ function player.phisics(dt, tablePlayer)
      
     local andou = false
     local p = tablePlayer
-    p.y = p.y + p.vely * dt
-    p.x = p.x + p.velx * dt
+  --  p.y = p.y + p.vely * dt
+   -- p.x = p.x + p.velx * dt
     if joystick then
         local axisX = joystick:getGamepadAxis("leftx")
         local axisY = joystick:getGamepadAxis("lefty")
@@ -51,24 +51,25 @@ function player.phisics(dt, tablePlayer)
         end
     end
     keydown("right", function()
-        p.velx = p.velx + mvel
+        p.x = p.x + mvel
         andou = true
     end)
     keydown("left", function()
-        p.velx = p.velx - mvel
+        p.x = p.x - mvel
         andou = true
      end)
      keydown("up", function()
-        p.vely = p.vely - mvel
+        p.y = p.y - mvel
         andou = true
      end)
      keydown("down", function()
-        p.vely = p.vely + mvel
+        p.y = p.y + mvel
         andou = true
      end)
-     if not andou then
-        p.velx = p.velx * atrito
-        p.vely = p.vely * atrito
+     if p.x < 0 then
+        p.x = 0
+     elseif p.x >  love.graphics.getWidth() - p.w then
+        p.x = love.graphics.getWidth() - p.w
      end
 end
 
