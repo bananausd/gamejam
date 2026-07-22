@@ -16,6 +16,7 @@ player = {
     }
 
 }
+local cutsceneManager = require("cutsceneManager")
 
 local obs = require("objs")
 
@@ -25,6 +26,7 @@ function player.load()
 end
 
 function player.update(dt)
+    
     player.phisics(dt, player.indiv)
 end
 
@@ -36,7 +38,6 @@ end
 
 function player.phisics(dt, tablePlayer)
      
-    local andou = false
     local p = tablePlayer
   --  p.y = p.y + p.vely * dt
    -- p.x = p.x + p.velx * dt
@@ -83,5 +84,6 @@ function keydown(key, cond) --só pra n terr q ficar chamando o keybord toda ora
         cond()
     end 
 end
+
 
 return player
