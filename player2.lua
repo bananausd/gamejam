@@ -14,7 +14,7 @@ function player2.load()
 end
 
 function player2.update(dt)
-    movePlayer(dt, 100)
+    movePlayer(dt, player2.accel)
     player2.vel.x = player2.vel.x + 10 * dt
     player2.vel.y = player2.vel.y + 5 * dt
     objs.ChangeObjectPos(player2.selfObj, player2.vel.x * dt, player2.vel.y * dt)
@@ -22,16 +22,16 @@ end
 
 function movePlayer(dt, mvel)
     keydown("left", function ()
-        player.vel.x = player.vel.x - mvel * dt
-end, 
+        player2.vel.x = player.vel.x - mvel * dt
+    end, 
     function ()
-        player.vel.x = 0
+        player2.vel.x = 0
     end)
      keydown("right", function ()
-        player.vel.x = player.vel.x - mvel * dt
-end, 
+        player2.vel.x = player2.vel.x + mvel * dt
+    end, 
     function ()
-        player.vel.x = 0
+        player2.vel.x = 0
     end)
 end
 

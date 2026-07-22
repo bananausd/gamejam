@@ -15,7 +15,7 @@ function  love.load()
 end
 
 function love.update(dt)
-    player.update(dt)
+    ---player.update(dt)
     player2.update(dt)
     objs.ChangeObjectPos(teste, 100 * dt, 100 * dt)
 end
