@@ -82,6 +82,9 @@ function objs.draw()
         elseif type == "mesa" then
             love.graphics.setColor(0, 1, 0)
             love.graphics.rectangle("fill", obj.x, obj.y, 40, 40)
+        elseif type == "player" then
+            love.graphics.setColor(0, 0, 1)
+            love.graphics.rectangle("fill", obj.x, obj.y, 30, 80)
         end
     end
 end
