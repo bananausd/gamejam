@@ -17,6 +17,8 @@ player = {
 
 }
 
+local obs = require("objs")
+
 function player.load()
      joysticks = love.joystick.getJoysticks()
      joystick = joysticks[1]
@@ -69,6 +71,13 @@ function player.phisics(dt, tablePlayer)
      end
 end
 
+function testaCutScene()
+    
+    cutsceneManager.triggerCutscene(true)
+    if keydown("space") then
+        cutsceneManager.triggerCutscene(false)
+    end
+end
 function keydown(key, cond) --só pra n terr q ficar chamando o keybord toda ora.(tenho preguiça de fazer esse capeta de desse if toda hora)
     if love.keyboard.isDown(key) then    
         cond()

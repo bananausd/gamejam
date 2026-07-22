@@ -3,6 +3,7 @@ local objs = require("objs")
 local teste
 local player2 = require("player2")
 local player = require("player")
+local cutsceneManager = require("cutsceneManager")
 
 function  love.load()
     player.load()
@@ -15,9 +16,11 @@ function  love.load()
 end
 
 function love.update(dt)
-    player.update(dt)
-    --player2.update(dt)
-    objs.ChangeObjectPos(teste, 100 * dt, 100 * dt)
+    while not cutsceneManager.triggerCutscene() do
+        player.update(dt)
+        --player2.update(dt)
+        objs.ChangeObjectPos(teste, 100 * dt, 100 * dt)
+    end
 end
 
 function  love.draw()
