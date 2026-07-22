@@ -43,28 +43,24 @@ function player.phisics(dt, tablePlayer)
         local axisY = joystick:getGamepadAxis("lefty")
         if math.abs(axisX) > .2 then
             p.x = p.x + (gmvel * axisX)
-            andou = true
+
         end
         if math.abs(axisY) > .2 then
             p.y = p.y + (gmvel * axisY)
-            andou = true
+
         end
     end
     keydown("right", function()
         p.x = p.x + mvel
-        andou = true
     end)
     keydown("left", function()
         p.x = p.x - mvel
-        andou = true
      end)
      keydown("up", function()
         p.y = p.y - mvel
-        andou = true
      end)
      keydown("down", function()
         p.y = p.y + mvel
-        andou = true
      end)
      if p.x < 0 then
         p.x = 0
