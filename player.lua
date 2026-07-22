@@ -1,6 +1,6 @@
 grav = 100
 atrito = .5
-mvel = 10
+mvel = 2
 gmvel = 2
 joystick = nil
 player = {
