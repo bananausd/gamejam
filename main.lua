@@ -1,7 +1,7 @@
 
 local objs = require("objs")
 local teste
-local player2 = require("player2")
+--local player2 = require("player2")
 local player = require("player")
 local cutsceneManager = require("cutsceneManager")
 
