@@ -22,16 +22,16 @@ end
 
 function movePlayer(dt, mvel)
     keydown("left", function ()
-        player.velx = player.velx - mvel * dt
+        player.vel.x = player.vel.x - mvel * dt
 end, 
     function ()
-        player.velx = 0
+        player.vel.x = 0
     end)
      keydown("right", function ()
-        player.velx = player.velx - mvel * dt
+        player.vel.x = player.vel.x - mvel * dt
 end, 
     function ()
-        player.velx = 0
+        player.vel.x = 0
     end)
 end
 
