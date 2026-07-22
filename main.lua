@@ -16,17 +16,10 @@ function  love.load()
 end
 
 function love.update(dt)
-<<<<<<< Updated upstream
-    while not cutsceneManager.triggerCutscene() do
-        player.update(dt)
-        --player2.update(dt)
-        objs.ChangeObjectPos(teste, 100 * dt, 100 * dt)
-=======
- if not cutsceneManager.triggerCutscene() then
+ if not cutsceneManager.triggerCutscene()then
     player.update(dt)
     --player2.update(dt)
     objs.ChangeObjectPos(teste, 100 * dt, 100 * dt)
->>>>>>> Stashed changes
     end
 end
 
@@ -38,7 +31,7 @@ end
 function love.keypressed(key, scancode, isrepeat)
     if key == "o" then
         cutsceneManager.triggerCutscene(true)
-    elseif key == "space" and cutsceneManager.triggerCutscene() then
+    elseif key == "space" and cutsceneManager.triggerCutscene then
         cutsceneManager.triggerCutscene(false)
     end
 end
